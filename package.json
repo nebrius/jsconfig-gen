@@ -1,0 +1,16 @@
+{
+  "name": "update_jsconfig",
+  "version": "1.0.0",
+  "description": "Updates/creates a jsconfig.json file w/ ES6 support for VS code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jsconfig": "./index.js"
+  },
+  "author": "Bryan Hughes <bryan.hughes@rd.io>",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
