@@ -20,18 +20,18 @@ if (process.argv.length > 2) {
   directories = [ process.cwd() ];
 }
 
-function processDir(dir, baseDir) {
+function processDir(dir) {
   const contents = fs.readdirSync(dir);
   for (let file of contents) {
     const filePath = path.join(dir, file);
     if (fs.statSync(filePath).isDirectory()) {
       if (file !== 'node_modules') {
-        processDir(filePath, baseDir);
+        processDir(filePath);
       }
     } else if (/\.jsx?$/.test(filePath)) {
-      config.files.push(path.relative(baseDir, filePath));
+      config.files.push(path.relative(process.cwd(), filePath));
     }
   }
 }
-directories.forEach((dir) => processDir(dir, dir));
+directories.forEach(processDir);
 fs.writeFileSync('jsconfig.json', JSON.stringify(config, null, '  '));
