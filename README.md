@@ -1,6 +1,10 @@
 # JSConfig Gen
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Helper tool that creates a jsconfig.json tool for Visual Studio Code. This tool adds `.js` files not in `node_modules` as ES6 sources, and also installs the Node.js type bindings so that Node.js built-ins don't generate errors
+
+**Note:** This package is no longer needed, Visual Studio no longer needs files listed in jsconfig.json to support ES6 syntax.
 
 ## Installation
 
